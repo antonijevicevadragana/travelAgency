@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(
+        to right,
+        #0a4275,
+        rgb(0, 191, 255),
+        rgba(0, 162, 255, 0.455),
+        whitesmoke
+    );
+    
+}
+
+/* navigacija */
+.logo {
+    width: 100px;
+    border-radius: 20px;
+}
+.navigacija {
+    font-size: 18px;
+    color: whitesmoke;
+}
+.navigacija:hover {
+    color: blue;
+}
+.navigacijadropdown:hover {
+    color: blue;
+}
+.nav {
+    background-color: #0a4275;
+}
+
+
+/* dugmici */
+.bg-blue {
+    background-color: #0a4275;
+    color: white;
+}
+
+.bg-blue:hover {
+    background-image: linear-gradient(
+        to right,
+        rgb(0, 191, 255),
+        #0a4275,
+        rgba(0, 162, 255, 0.455)
+    );
+}
+
+.bg-grey {
+    background-color: gray;
+    color: white;
+}
+
+.bg-grey:hover {
+    background-image: linear-gradient(to right, black, grey, white);
+}
+
+/* slika za pozadinu, u okviru samog diva je dodat style kojim se pristupa u db i uzima */
+.bg-image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+    height: auto;
+    padding-top: 56.25%; /* Ovo je odnos širine i visine, na primer, za sliku 16:9, postavite 9:16 */
+    opacity: 0.9;
+}
+.justify {
+    text-align: justify;
+}
+
+/* slider */
+
+.carousel-item {
+    position: relative;
+    background-color: black;
+  }
+  
+  .images {
+    opacity: 0.4;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: auto;
+  }
+  
+  .images:hover {
+    opacity: 0.6;
+  }
+  
+  .carousel-caption {
+    background-color: #3333337f;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 120px;
+    color: black;
+    text-shadow: 2px 3px 5px #000000;
+    border-radius: 10px;
+  }
+  
+  .carousel-caption h2 {
+    font-weight: 500;
+    font-style: italic;
+    letter-spacing: 5px;
+  }
+  
+  .carousel-caption p,
+  .carousel-caption h2  {
+    animation: backInRight; /*  @keyframe  */
+    animation-duration: 3s;
+  }
+
+
+  .commentAutor{
+    
+    word-wrap: break-word;
+    border-top-left-radius: 10px; 
+    
+
+}
+.commentOther {
+    
+    word-wrap: break-word;
+  
+    /* width: 650px; */
+  
+   
+   
+   border-top-left-radius: 10px;
+}
+
+/* RESPONSIVE */
+
+@media only screen and (max-width: 768px) {
+    .logo {
+        width: 60px;
+        border-radius: 10px;
+    }
+  
+} 
+
+/* dropdown za show blog */
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+@media only screen and (min-width: 1200px){
+   /* komentari */
+.commentAutor{
+    position: relative;
+    word-wrap: break-word;
+    border-radius: 8px;
+    
+
+}
+.commentOther {
+    /* left: 30px; */
+    word-wrap: break-word;
+    position: relative;
+   border-radius: 8px;
+}
+}

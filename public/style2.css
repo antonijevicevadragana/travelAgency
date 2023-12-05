@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("img/lago3.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh; /* da bi bila vidljiva na svim ekranima, da nema podloge */
+    width: 100%;
+
+    background-color: rgba(0, 162, 255, 0.455);
+}
+
+/* foma */
+/* div kojim je uokvirena login forma je flex, zbog lakseg centriranja */
+.content {  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 78vh;
+    overflow: hidden;
+}
+
+/* ovo je div ispod contenta direktno u njemu je pisana forma */
+.frame {
+    width: 430px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(7px);
+    color: white;
+    border-radius: 12px;
+    padding: 20px 30px;
+    box-shadow: 0 5px 5px rgba(128, 128, 128, 0.451);
+}
+
+.frame .input-box{
+    width: 100%;
+    height: 50px;
+    margin: 28px 0;
+  }
+
+  .input-box input{
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 30px;
+    
+  }
+  .input-box input::placeholder {
+    color: white;
+  }
+ 
+  .dugmic {
+    background-color: #0a4275;
+    box-shadow: 0 5px 5px rgba(128, 128, 128, 0.451);
+    border: none;
+    color: white;
+    border-radius: 30px;
+    width: 100%;
+    height: 100%; 
+}
+
+.dugmic:hover {
+    background-image: linear-gradient(
+        to right,
+        rgb(0, 191, 255),
+        blue,
+        rgba(0, 162, 255, 0.455)
+    );
+    box-shadow: 0 5px 5px rgba(128, 128, 128, 0.451);
+    /* transform: scale(0.9, 0.9);  */
+}
+
+/* navigacija */
+.navigacija {
+    font-size: 18px;
+    color: whitesmoke;
+}
+.navigacija:hover{
+  color: blue;
+}
+.navigacijadropdown:hover{
+  color: blue;
+}
+.nav {
+ 
+    background-color:#0a4275;
+}
+
+.logo {
+    width: 100px;
+    border-radius: 20px;
+}
+
+
+.welcome{
+    backdrop-filter: blur(7px);
+}
+.welcome a:link,
+.welcome a:visited {
+   
+    background-color:#0a4275;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+   
+  }
+ 
+/* welcome stranica i navigacija */
+  .welcome a:hover i{
+    animation: flip; 
+    animation-duration: 3s;
+  }
+
+
+
+ .welcome a:hover {
+     background-image: linear-gradient(
+        to right,
+        rgb(0, 191, 255),
+        #0a4275,
+        blue,
+        rgba(0, 162, 255, 0.455)
+    );
+  }
+
+  .welcome h2 {
+    /* color: beige; */
+    color: white;
+    text-shadow: 2px 3px 5px #000000;
+  }
+
+
+@media only screen and (max-width: 992px) {
+    body {
+        background-image: url("img/lago4.jpg");
+    }
+}
+
+@media only screen and (max-width: 576px) {
+   
+    .content{
+        min-height: 65vh;
+    }
+    .logo{
+        width: 60px;
+    border-radius: 10px;
+    }
+}
