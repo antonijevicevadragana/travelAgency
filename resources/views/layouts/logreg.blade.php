@@ -69,8 +69,9 @@
                         </li>
 
                         {{-- administracija mogu da vide samo admini - rola 1 --}}
-                        {{-- prvo se vrsi provera da li korisnik prijavljen i ako je i rola je 1 onda je administracija vidljiva--}}
-                        @if (auth()->check() && auth()->user()->roles->first()->type == 1)
+                        {{-- prvo se vrsi provera da li korisnik prijavljen i ako je i rola je 1 onda je administracija vidljiva --}}
+                        @if (auth()->check() &&
+                                auth()->user()->roles->first()->type == 1)
                             <li class="nav-item dropdown text-light">
                                 <a id="navbarAdministacija" class="nav-link dropdown-toggle navigacija" href="#"
                                     role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
@@ -183,7 +184,7 @@
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle text-light" href="#"
                                     role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                    v-pre >
+                                    v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
@@ -222,27 +223,30 @@
                 <div class="row justify-content-center">
                     <div class="col-md-8">
                         @if (session('alertMsg'))
-                            <div class="alert alert-{{ session('alertType') }} alert-dismissible fade show"
+                            <div x-data="{ show: true }" x-init="setTimeout(() => show = false, 3000)" x-show="show"
+                                class="alert alert-{{ session('alertType') }} alert-dismissible fade show"
                                 role="alert">
-                                {{ __(session('alertMsg')) }}
+                                <p>{{ session('alertMsg') }}</p>
                                 <button type="button" class="btn-close" data-bs-dismiss="alert"
                                     aria-label="Close"></button>
+
                             </div>
                         @endif
-                        <div class="col-md-8">
-                            @if (session('status'))
-                                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                    {{ __(session('status')) }}
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                        aria-label="Close"></button>
-                                </div>
-                            @endif
+                        @if (session('status'))
+                            <div x-data="{ show: true }" x-init="setTimeout(() => show = false, 3000)" x-show="show"
+                                class="alert alert-success alert-dismissible fade show" role="alert">
+                                <p>{{ session('status') }}</p>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+
+                            </div>
+                        @endif
 
 
-                        </div>
                     </div>
                 </div>
-                @yield('content')
+            </div>
+            @yield('content')
         </main>
 
     </div>
@@ -253,13 +257,7 @@
             <p> Copyright &copy; 2023, All Rights reserved</p>
         </div>
     </footer>
-
-    {{-- <footer class="text-center text-white" style="background-color: #0a4275;">
-            <div class="container p-4 pb-0">
-                <p>Copyright &copy; 2023, All Rights reserved</p>
-            </div>
-        </footer>  --}}
-
+    <script src="//unpkg.com/alpinejs" defer></script>
 </body>
 
 </html>
