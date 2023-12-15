@@ -36,7 +36,7 @@
                 
                             <input type="radio" class="btn-check" name="gender" id="female" value="female"
                                 @if (old('gender',$profile->gender) === 'female') checked @endif>
-                            <label class="btn btn-outline-primary bg-label" for="femile">{{__('Žensko') }}</label>
+                            <label class="btn btn-outline-primary bg-label" for="female">{{__('Žensko') }}</label>
 
                             
                             <input type="radio" class="btn-check" name="gender" id="other" value="other"
