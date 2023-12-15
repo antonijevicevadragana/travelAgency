@@ -10,21 +10,18 @@
                     <button type="submit" class="btn btn-danger btn-sm delete-button"><i class="fa-solid fa-trash"></i>
                         {{ __('Izbriši') }}</button>
                 </form>
-
-
-
                 @php
-                    if ($feedback->destination->star == 1) {
-                        $s = '★☆☆☆☆';
-                    } elseif ($feedback->destination->star == 2) {
-                        $s = '★★☆☆☆';
-                    } elseif ($feedback->destination->star == 3) {
-                        $s = '★★★☆☆';
-                    } elseif ($feedback->destination->star == 4) {
-                        $s = '★★★★☆';
-                    } else {
-                        $s = '★★★★★';
-                    }
+                   if ($feedback->star == 1) {
+                    $s = '★☆☆☆☆';
+                } elseif ($feedback->star == 2) {
+                    $s = '★★☆☆☆';
+                } elseif ($feedback->star == 3) {
+                    $s = '★★★☆☆';
+                } elseif ($feedback->star == 4) {
+                    $s = '★★★★☆';
+                } else {
+                    $s = '★★★★★';
+                }
                 @endphp
                 <p class="d-flex justify-content-end"> {{__('Ocena')}}: {{ $s }}</p>
                 <hr>

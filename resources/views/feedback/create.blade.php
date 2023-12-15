@@ -10,7 +10,7 @@
                 <p>{{__('Feedback se moze ostaviti samo za realizvona putovanja')}}.</p>
                 <p>{{__('Iz padajuceg menija izaberite neko od Vasih realizovanih putovanja za koje zelite da ostavite recenziju')}}</p>
                 <label for="destination_id">{{ __('Izbor destinacije') }}:</label>
-                    <select class="form-select @error('destination_id') is-invalid @enderror" aria-label="Default select example" name="destination_id">
+                    <select class="form-select text-white @error('destination_id') is-invalid @enderror" aria-label="Default select example" name="destination_id">
                         <option value="">--</option>
                         @foreach ($reservation as $d)
                         {{-- moze da se ostavi feedback samo za putovanja koja su vec realizovana --}}

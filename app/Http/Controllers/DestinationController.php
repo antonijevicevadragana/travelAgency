@@ -288,7 +288,7 @@ class DestinationController extends Controller
             }
         }
 
-        return view('destination.first', ['dest' => $dest,  'hotelName' => $hotelName, 'carbonStart' => $carbonStart, 'start' => $start]);
+        return view('destination.first', ['dest' => $dest,  'hotelName' => $hotelName]);
     }
 
     //Zimovanje
