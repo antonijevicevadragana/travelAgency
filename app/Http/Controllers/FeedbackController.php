@@ -65,6 +65,13 @@ class FeedbackController extends Controller
                 return redirect()->route('aboutUs');
             }
         }
+
+        if ($userRole && $userRole->type === 1 ) {
+             // admin ne moze da ostavlja recenzije
+             session()->flash('alertType', 'danger');
+             session()->flash('alertMsg', 'Admin ne moze da ostavlja recenzije');
+             return redirect()->route('aboutUs');
+        }
         $form['user_id'] = $userId=$user->id;
     //  dd($form);
         $feedback = Feedback::create($form);
